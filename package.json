@@ -1,6 +1,6 @@
 {
   "name": "traces-reader",
-  "version": "1.8.0",
+  "version": "1.0.0",
   "publisher": "akkady",
   "engines": {
     "vscode": "^1.67.0"
@@ -39,8 +39,9 @@
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JatinSanghvi/color-my-text-vscode.git"
+    "url": "https://github.com/akkady/traces-reader.git"
   }
 }
