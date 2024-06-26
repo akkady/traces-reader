@@ -1,0 +1,81 @@
+{
+    "tracesReader.configurations": [
+        {
+            "lineReg": "^(\\d{4})\\s(\\d{9})\\s(\\d{8})\\s(\\d{8})(\\|\\d\\|)\\s(.+)",
+            "paths": [
+                "**/*.TRACE*",
+                "**/*.trace*",
+                "**/*.TRC*"
+            ],
+            "rules": [
+                {
+                    "patterns": [
+                        "^\\d{4}\\s\\d{9}\\s\\S"
+                    ],
+                    "color": "BrightBlack"
+                },
+                {
+                    "patterns": [
+                        "\\s\\d{8}\\s\\S"
+                    ],
+                    "color": "Magenta"
+                },
+                {
+                    "patterns": [
+                        "\\sEVENT\\s:.*",
+                        " - M.T.I.*",
+                        "\\sTAG.*"
+                    ],
+                    "color": "BrightCyan",
+                    "bold": true,
+                    "italic": true
+                },
+                {
+                    "patterns": [
+                        "\\|\\s.*NOK.*",
+                        "\\|\\s.*MALFUNCTION.*",
+                        "\\s203\\s.*\\s003\\s(?!000).*",
+                        "\\s039\\s.*\\s003\\s(?!000).*",
+                        "\\|\\s.+Err.+",
+                        "\\|\\sEnd.+-1.*",
+                        "\\|\\s=+.+Start BACKTRACE.+"
+                    ],
+                    "color": "Red",
+                    "bold": true
+                },
+                {
+                    "patterns": [
+                        "\\|\\s.+037.+",
+                        "\\|\\sCALL Ad In:.+",
+                        "\\|6\\|\\s"
+                    ],
+                    "color": "BrightYellow"
+                },
+                {
+                    "patterns": [
+                        "\\|\\s.+RRN.*",
+                        "\\|\\s---.+"
+                    ],
+                    "color": "BrightYellow",
+                    "bold": true
+                },
+                {
+                    "patterns": [
+                        "\\s203\\s.*\\s003\\s000.*",
+                        "\\s039\\s.*\\s003\\s000.*"
+                    ],
+                    "color": "Green",
+                    "bold": true
+                },
+                {
+                    "patterns": [
+                        "\\|\\sEnd.+(?!NOK).*",
+                        "\\|\\sEnd.+(?!-1).*",
+                        "\\|\\sStart.*"
+                    ],
+                    "color": "BrightBlack"
+                }
+            ]
+        }
+    ]
+}
