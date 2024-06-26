@@ -13,7 +13,7 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "*"
+    "onLanguage:plaintext"
   ],
   "dependencies": {
     "glob": "^8.1.0",
