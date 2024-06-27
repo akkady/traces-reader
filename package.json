@@ -1,6 +1,6 @@
 {
   "name": "traces-reader",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "publisher": "akkady",
   "engines": {
     "vscode": "^1.67.0"
@@ -13,8 +13,31 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onLanguage:plaintext"
+    "onLanguage:trc"
   ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "trc",
+        "extensions": [
+          ".TRC*",
+          ".TRC01",
+          ".TRC02",
+          ".TRC03"
+        ],
+        "aliases": [
+          "Traces",
+          "traces"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "traces-reader.openTraces",
+        "title": "Open Traces"
+      }
+    ]
+  },
   "dependencies": {
     "glob": "^8.1.0",
     "minimatch": "^5.0.1"
